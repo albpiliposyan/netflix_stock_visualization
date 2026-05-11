@@ -1,10 +1,14 @@
-# Netflix Stock - Exploratory Data Analysis
+# Netflix Stock Visualization Dashboard
 
-A simple EDA of Netflix (NFLX) stock prices from 2002 to 2026.
+A simple Dash dashboard and notebook project for Netflix (NFLX) stock prices from 2002 to 2026.
 
 ## Project Description
 
-This notebook performs basic exploratory data analysis on Netflix stock data. It covers common EDA techniques like inspecting data, checking quality, visualizing trends, and analyzing distributions.
+This project contains:
+
+- `netflix_stock_eda.ipynb` - exploratory data analysis
+- `netflix_stock_story.ipynb` - story, insights, and Plotly charts
+- `app.py` - a three-page Dash dashboard draft based on the story notebook
 
 ## Dataset
 
@@ -18,23 +22,25 @@ This notebook performs basic exploratory data analysis on Netflix stock data. It
 ## Project Structure
 
 ```
-netflix-stock-eda/
-├── netflix_stock_eda.ipynb   # Jupyter Notebook
-├── README.md                 
-├── requirements.txt          
+netflix_stock_visualization/
+├── app.py
+├── assets/
+│   └── styles.css
+├── netflix_stock_eda.ipynb
+├── netflix_stock_story.ipynb
+├── README.md
+├── requirements.txt
 └── datasets/
-    └── netflix_stock.csv     
+    └── netflix_stock.csv
 ```
 
-## What's Covered
+## Dashboard Pages
 
-1. **Load Data** - Read CSV and inspect structure
-2. **Data Quality** - Check missing values, duplicates
-3. **Visualizations** - Price chart, volume chart
-4. **Returns Analysis** - Histogram, basic stats
-5. **Correlation** - Heatmap of features
-6. **Box Plot** - Identify outliers
-7. **Summary** - Key findings
+1. **History** - full price history, story eras, moving averages, and summary cards
+2. **Performance** - annual return winners/losers and monthly seasonality heatmap
+3. **Risk & Seasonality** - crash-window candlesticks, volume, return distribution, and rolling volatility
+
+The dashboard includes Dash callbacks for year ranges, dropdowns, sliders, moving-average toggles, and buttons.
 
 ## Requirements
 
@@ -42,7 +48,45 @@ netflix-stock-eda/
 pip install -r requirements.txt
 ```
 
-## Usage
+## Run the Dashboard
+
+From this folder:
+
+```bash
+python app.py
+```
+
+Then open:
+
+```text
+http://127.0.0.1:8050
+```
+
+If port `8050` is already used, run it on another port:
+
+```bash
+python app.py --port 8051
+```
+
+Then open:
+
+```text
+http://127.0.0.1:8051
+```
+
+For development with Dash debug mode:
+
+```bash
+python app.py --debug
+```
+
+You can combine both options:
+
+```bash
+python app.py --port 8051 --debug
+```
+
+## Run the Notebooks
 
 ```bash
 jupyter notebook netflix_stock_eda.ipynb
