@@ -86,6 +86,28 @@ You can combine both options:
 python app.py --port 8051 --debug
 ```
 
+## Deploy on Render
+
+This dashboard is ready to run as a Render **Web Service**.
+
+Use these settings in the Render dashboard:
+
+| Setting | Value |
+|---------|-------|
+| **Runtime** | Python 3 |
+| **Build Command** | `pip install -r requirements.txt` |
+| **Start Command** | `gunicorn app:server` |
+
+The `.python-version` file pins the deployment to Python 3.14 without requiring a Render environment variable.
+
+Why `app:server`? The Dash app in `app.py` exposes the Flask server as:
+
+```python
+server = app.server
+```
+
+Render will run that server with Gunicorn in production.
+
 ## Run the Notebooks
 
 ```bash
