@@ -26,6 +26,7 @@ netflix_stock_visualization/
 ├── app.py
 ├── assets/
 │   └── styles.css
+├── DASHBOARD_GUIDE.md
 ├── netflix_stock_eda.ipynb
 ├── netflix_stock_story.ipynb
 ├── README.md
@@ -41,6 +42,8 @@ netflix_stock_visualization/
 3. **Risk & Seasonality** - crash-window candlesticks, volume, return distribution, and rolling volatility
 
 The dashboard includes Dash callbacks for year ranges, dropdowns, sliders, moving-average toggles, and buttons.
+
+For detailed chart explanations and implementation notes, see [DASHBOARD_GUIDE.md](DASHBOARD_GUIDE.md).
 
 ## Requirements
 
